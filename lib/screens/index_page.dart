@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home/home_page.dart';
 
 class IndexPage extends StatefulWidget {
   static const routeName = '/';
@@ -14,12 +15,7 @@ class _IndexPageState extends State<IndexPage> {
 
   //list of tabs
   final List<Widget> _tabs = [
-    const Center(
-      child: Text('Home Page'),
-    ),
-    const Center(
-      child: Text('About Page'),
-    ),
+    const HomePage(),
     const Center(
       child: Text('Projects Page'),
     ),
@@ -42,16 +38,13 @@ class _IndexPageState extends State<IndexPage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'About',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.mobile_screen_share),
-            label: 'Share',
+            label: 'Projects',
           ),
         ],
+        elevation: 14.0,
         currentIndex: _selectedTabIndex,
-        selectedItemColor: Colors.blue[700],
+        selectedItemColor: Colors.black,
         onTap: _onTabSelected,
       ),
     );
