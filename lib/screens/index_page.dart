@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class IndexPage extends StatefulWidget {
-  static const routeName = '/index';
+  static const routeName = '/';
   const IndexPage({Key? key}) : super(key: key);
 
   @override
