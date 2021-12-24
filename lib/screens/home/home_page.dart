@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'about_page.dart';
+
 class HomePage extends StatelessWidget {
   static const routeName = '/home';
   const HomePage({Key? key}) : super(key: key);
@@ -7,30 +9,37 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _dSize = MediaQuery.of(context).size;
-    return Row(
-      children: [
-        Flexible(
-          child: Container(
-            height: _dSize.height,
-            decoration: const BoxDecoration(
-              color: Colors.red,
+    return SingleChildScrollView(
+      child: Container(
+        color: Colors.white,
+        child: Row(
+          children: [
+            Flexible(
+              child: Container(
+                width: _dSize.width * 0.5,
+                height: _dSize.height,
+                decoration: const BoxDecoration(
+                  color: Colors.transparent,
+                ),
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Image.asset(
+                    'images/pf_pic.png',
+                    fit: BoxFit.fitHeight,
+                  ),
+                ),
+              ),
             ),
-            child: Image.asset(
-              'images/pf_pic.png',
-              fit: BoxFit.cover,
+            Flexible(
+              child: SizedBox(
+                width: _dSize.width * 0.5,
+                height: _dSize.height,
+                child: const AboutPage()
+              ),
             ),
-          ),
+          ],
         ),
-        Flexible(
-          child: SizedBox(
-            width: _dSize.width * 0.5,
-            height: _dSize.height,
-            child: const FlutterLogo(
-              size: 150,
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
