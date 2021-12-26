@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home/home_page.dart';
+import 'projects/projects_page.dart';
 
 class IndexPage extends StatefulWidget {
   static const routeName = '/';
@@ -16,9 +17,7 @@ class _IndexPageState extends State<IndexPage> {
   //list of tabs
   final List<Widget> _tabs = [
     const HomePage(),
-    const Center(
-      child: Text('Projects Page'),
-    ),
+    const ProjectsPage(),
   ];
 
   void _onTabSelected(int index) {
