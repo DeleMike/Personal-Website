@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../screens/projects/projects_page.dart';
 import '../models/project.dart';
+import '../utils/projects_data.dart';
 
 /// Manages all functionalities of the [ProjectsPage]
 class ProjectProvider with ChangeNotifier {
@@ -10,7 +11,7 @@ class ProjectProvider with ChangeNotifier {
 
   ///returns a list of all Project model
   List<Project> get projects {
-    return _projects;
+    return [..._projects];
   }
 
   /// Add a new Project
@@ -23,6 +24,8 @@ class ProjectProvider with ChangeNotifier {
   /// Fetch all projects
   void fetchAndSetProjects() {
     //get data
-    notifyListeners();
+   for (var projectData in projectsData) {
+      _projects.add(Project.fromJson(projectData));
+    }
   }
 }
