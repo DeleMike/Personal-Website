@@ -15,17 +15,19 @@ class BigHomePage extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-           width: _dSize.width * 0.5,
-           height: _dSize.height,
+            width: _dSize.width * 0.5,
+            height: _dSize.height,
             child: FittedBox(
               fit: BoxFit.cover,
-              child: Image.asset(
-                'images/pf_pic.png',
-                fit: BoxFit.fitHeight,
-              ),
+              child: Image.network(
+                'https://delemike.github.io/MK-iNVENTS/pf_pic.png',
+              ), // child: Image.asset(
+              //   'images/pf_pic.png',
+              //   fit: BoxFit.fitHeight,
+              // ),
             ),
           ),
-           const AboutPage(),
+          const AboutPage(),
         ],
       ),
     );

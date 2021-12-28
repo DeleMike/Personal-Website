@@ -7,7 +7,7 @@ final List<Map<String, Object>> projectsData = [
         'This project extensively uses The Provider for its state management.'
         '\n\nBuilt and Powered with Flutter.',
     'projectGtLink': 'https://github.com/DeleMike/trivia',
-    'projectImgCover': 'images/projects/trivia_jpg.jpg',
+    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/trivia_jpg.jpg',
   },
   {
     'projectID': 2,
@@ -15,7 +15,7 @@ final List<Map<String, Object>> projectsData = [
     'projectDesc': 'Your one stop app for all breaking news on COVID-19.'
         '\n\nBuilt and powered by Android Native SDK(Java)',
     'projectGtLink': 'https://github.com/DeleMike/Coronavirus-Report',
-    'projectImgCover': 'images/projects/covid_jpg.jpg',
+    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/covid_jpg.jpg',
   },
   {
     'projectID': 3,
@@ -24,7 +24,7 @@ final List<Map<String, Object>> projectsData = [
         'This project builds a video player to showcase some of Flutter SDK Native powers.'
             '\n\nBuilt and powered by Flutter',
     'projectGtLink': 'https://github.com/DeleMike/vid_player',
-    'projectImgCover': 'images/projects/video_player.jpg',
+    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/video_player.jpg',
   },
   {
     'projectID': 4,
@@ -34,7 +34,7 @@ final List<Map<String, Object>> projectsData = [
             'Firebase Authentication, Firestore for Data Persistence and Firebase Cloud Functions capabilities.'
             '\n\nBuilt and powered by Flutter',
     'projectGtLink': 'https://github.com/DeleMike/chat-app',
-    'projectImgCover': 'images/projects/chat.jpg',
+    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/chat.jpg',
   },
   {
     'projectID': 5,
@@ -43,7 +43,7 @@ final List<Map<String, Object>> projectsData = [
         '\nIt also shows how to implement a LinkedList and uses a simple sorting algorithm(Bubble Sort) to sort data'
         '\n\nBuilt and powered with C++',
     'projectGtLink': 'https://github.com/DeleMike/Stack-DS-Implemtation',
-    'projectImgCover': 'images/projects/ds_algo.jpg',
+    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/ds_algo.jpg',
   },
   {
     'projectID': 6,
@@ -52,6 +52,6 @@ final List<Map<String, Object>> projectsData = [
         'Uses Firebase as its Backend.'
         '\n\nBuilt and Powered with Flutter',
     'projectGtLink': 'https://github.com/DeleMike/TheShop',
-    'projectImgCover': 'images/projects/online_shop.jpg',
+    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/online_shop.jpgg',
   },
 ];

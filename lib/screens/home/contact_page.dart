@@ -21,37 +21,37 @@ class ContactPage extends StatelessWidget {
             _ConnectButton(
               url: Constants.profileGithub,
               name: 'DeleMike',
-              assetUrl: 'images/github.png',
+              assetUrl: 'https://delemike.github.io/MK-iNVENTS/github.png',
               textDesc: 'Connect to Github',
             ),
             _ConnectButton(
               url: Constants.profileLinkedIn,
               name: 'Akindele Michael',
-              assetUrl: 'images/linkedin.png',
+              assetUrl: 'https://delemike.github.io/MK-iNVENTS/linkedin.png',
               textDesc: 'Connect to LinkedIn',
             ),
             _ConnectButton(
               url: Constants.profileTwitter,
               name: 'Delé',
-              assetUrl: 'images/twitter.png',
+              assetUrl: 'https://delemike.github.io/MK-iNVENTS/twitter.png',
               textDesc: 'Connect to Twitter',
             ),
             _ConnectButton(
               url: Constants.profileMedium,
               name: 'Akindele Michael',
-              assetUrl: 'images/medium_light.png',
+              assetUrl: 'https://delemike.github.io/MK-iNVENTS/medium_light.png',
               textDesc: 'Connect to Medium',
             ),
             _ConnectButton(
               url: Constants.profileInstagram,
               name: 'Akindele Michael',
-              assetUrl: 'images/instagram.png',
+              assetUrl: 'https://delemike.github.io/MK-iNVENTS/instagram.png',
               textDesc: 'Connect to Instagram',
             ),
             _ConnectButton(
               url: Constants.gmail,
               name: 'My Mail',
-              assetUrl: 'images/gmail.png',
+              assetUrl: 'https://delemike.github.io/MK-iNVENTS/gmail.png',
               textDesc: 'Connect to Mail',
             ),
           ],
@@ -80,7 +80,7 @@ class _ConnectButton extends StatelessWidget {
         icon: SizedBox(
           height: 20,
           width: 20,
-          child: Image.asset(assetUrl!),
+          child: Image.network(assetUrl!),
         ),
         label: Padding(
           padding: const EdgeInsets.all(8.0),
