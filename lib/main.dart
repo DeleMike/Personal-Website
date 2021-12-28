@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Akindele Michael',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          backgroundColor: Colors.black,
+          primarySwatch: Colors.indigo,
         ),
       
         home: const IndexPage(), 
