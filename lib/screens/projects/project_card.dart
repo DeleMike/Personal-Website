@@ -62,7 +62,7 @@ class ProjectCard extends StatelessWidget {
                     ),
                     image: DecorationImage(
                       fit: BoxFit.fitWidth,
-                      image: AssetImage('$projectImgCover'),
+                      image: NetworkImage('$projectImgCover'),
                     ),
                   ),
                 ),

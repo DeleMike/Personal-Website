@@ -52,6 +52,6 @@ final List<Map<String, Object>> projectsData = [
         'Uses Firebase as its Backend.'
         '\n\nBuilt and Powered with Flutter',
     'projectGtLink': 'https://github.com/DeleMike/TheShop',
-    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/online_shop.jpgg',
+    'projectImgCover': 'https://delemike.github.io/MK-iNVENTS/online_shop.jpg',
   },
 ];
