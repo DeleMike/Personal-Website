@@ -15,132 +15,83 @@ class ContactPage extends StatelessWidget {
       margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
       padding: const EdgeInsets.only(left: 16.0, right: 16.0),
       child: Wrap(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextButton.icon(
-              onPressed: () =>
-                  html.window.open(Constants.profileGithub, 'DeleMike'),
-              icon: SizedBox(
-                height: 20,
-                width: 20,
-                child: Image.asset('images/github.png'),
-              ),
-              label: Text(
-                'Connect to Github',
-                style: GoogleFonts.nunitoSans(
-                  textStyle: const TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
+        children: const [
+          _ConnectButton(
+            url: Constants.profileGithub,
+            name: 'DeleMike',
+            assetUrl: 'images/github.png',
+            textDesc: 'Connect to Github',
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextButton.icon(
-              onPressed: () => html.window
-                  .open(Constants.profileLinkedIn, 'Akindele Michael'),
-              icon: SizedBox(
-                height: 20,
-                width: 20,
-                child: Image.asset('images/linkedin.png'),
-              ),
-              label: Text('Connect to LinkedIn',
-                  style: GoogleFonts.nunitoSans(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14,
-                      color: Colors.black,
-                    ),
-                  )),
-            ),
+          _ConnectButton(
+            url: Constants.profileLinkedIn,
+            name: 'Akindele Michael',
+            assetUrl: 'images/linkedin.png',
+            textDesc: 'Connect to LinkedIn',
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextButton.icon(
-              onPressed: () =>
-                  html.window.open(Constants.profileTwitter, 'Delé'),
-              icon: SizedBox(
-                height: 20,
-                width: 20,
-                child: Image.asset('images/twitter.png'),
-              ),
-              label: Text('Connect to Twitter',
-                  style: GoogleFonts.nunitoSans(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14,
-                      color: Colors.black,
-                    ),
-                  )),
-            ),
+          _ConnectButton(
+            url: Constants.profileTwitter,
+            name: 'Delé',
+            assetUrl: 'images/twitter.png',
+            textDesc: 'Connect to Twitter',
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextButton.icon(
-              onPressed: () =>
-                  html.window.open(Constants.profileMedium, 'Akindele Michael'),
-              icon: SizedBox(
-                height: 20,
-                width: 20,
-                child: Image.asset('images/medium_light.png'),
-              ),
-              label: Text('Connect to Medium',
-                  style: GoogleFonts.nunitoSans(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14,
-                      color: Colors.black,
-                    ),
-                  )),
-            ),
+          _ConnectButton(
+            url: Constants.profileMedium,
+            name: 'Akindele Michael',
+            assetUrl: 'images/medium_light.png',
+            textDesc: 'Connect to Medium',
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextButton.icon(
-              onPressed: () =>
-                  html.window.open(Constants.profileInstagram, 'Akindele Michael'),
-              icon: SizedBox(
-                height: 20,
-                width: 20,
-                child: Image.asset('images/instagram.png'),
-              ),
-              label: Text('Connect to Instagram',
-                  style: GoogleFonts.nunitoSans(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14,
-                      color: Colors.black,
-                    ),
-                  )),
-            ),
+          _ConnectButton(
+            url: Constants.profileInstagram,
+            name: 'Akindele Michael',
+            assetUrl: 'images/instagram.png',
+            textDesc: 'Connect to Instagram',
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextButton.icon(
-              onPressed: () =>
-                  html.window.open(Constants.gmail, 'My Mail'),
-              icon: SizedBox(
-                height: 20,
-                width: 20,
-                child: Image.asset('images/gmail.png'),
-              ),
-              label: Text(
-                'Go to Gmail',
-                style: GoogleFonts.nunitoSans(
-                  textStyle: const TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
+          _ConnectButton(
+            url: Constants.gmail,
+            name: 'My Mail',
+            assetUrl: 'images/gmail.png',
+            textDesc: 'Connect to Mail',
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _ConnectButton extends StatelessWidget {
+  final String? url;
+  final String? name;
+  final String? assetUrl;
+  final String? textDesc;
+
+  const _ConnectButton(
+      {this.url, this.name, this.assetUrl, this.textDesc, Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: TextButton.icon(
+        onPressed: () => html.window.open(url!, name!),
+        icon: SizedBox(
+          height: 20,
+          width: 20,
+          child: Image.asset(assetUrl!),
+        ),
+        label: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            textDesc!,
+            style: GoogleFonts.nunitoSans(
+              textStyle: const TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: 14,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
