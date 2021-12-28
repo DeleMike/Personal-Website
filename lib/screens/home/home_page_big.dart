@@ -14,13 +14,9 @@ class BigHomePage extends StatelessWidget {
       //padding: const EdgeInsets.all(12),
       child: Row(
         children: [
-          Container(
+          SizedBox(
            width: _dSize.width * 0.5,
            height: _dSize.height,
-            decoration: const BoxDecoration(
-              color: Colors.red,
-            ),
-
             child: FittedBox(
               fit: BoxFit.cover,
               child: Image.asset(
