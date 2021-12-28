@@ -18,23 +18,14 @@ class _ProjectsPageState extends State<ProjectsPage> {
   List<Project> _projectList = [];
 
   @override
-  void didChangeDependencies() {
-    //fetch all projects data
-
-    super.didChangeDependencies();
-  }
-
-  @override
   void initState() {
     super.initState();
-
+      //fetch all projects data
     final _projectProvider =
         Provider.of<ProjectProvider>(context, listen: false);
     _projectProvider.fetchAndSetProjects();
-    setState(() {
     _projectList = _projectProvider.projects;
       
-    });
   }
 
   @override
