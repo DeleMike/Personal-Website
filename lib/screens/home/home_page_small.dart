@@ -10,7 +10,7 @@ class SmallHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 16.0),
-      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+      // padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -79,8 +79,11 @@ class SmallHomePage extends StatelessWidget {
                 textAlign: TextAlign.start,
               ),
             ),
-            const Divider(),
-            const ContactPage(),
+            
+            Container(
+              color: Colors.transparent,
+              child: const ContactPage(),
+            ),
           ],
         ),
       ),
