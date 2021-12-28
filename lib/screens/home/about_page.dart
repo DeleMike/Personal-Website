@@ -25,7 +25,6 @@ class AboutPage extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.all(16.0),
                 padding: const EdgeInsets.all(16.0),
-                constraints: const BoxConstraints.expand(),
                 child: Text(
                   'Akindele Michael',
                   style: GoogleFonts.nunito(
@@ -62,36 +61,42 @@ class AboutPage extends StatelessWidget {
             const Divider(),
 
             //Note about myself
-            Flexible(
-              child: Container(
-                // margin: const EdgeInsets.all(16.0),
-                padding: const EdgeInsets.all(16.0),
-
-                child: Text(
-                  "Hi, I'm Michael a student of Computer Science at the University of Ibadan. "
-                  "I love building mobile softwares & services and also love learning. "
-                  "My current interests lie in Mobile Development, Deep Learning and Algorithms and Data Structures"
-                  "\n\nI always want to use my knowledge to the best I can to solve problems that can better people lives. "
-                  "In my free time, I prefer hanging out with close friends or watch some football. "
-                  "I love travelling too",
-                  style: GoogleFonts.nunitoSans(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 20,
-                      color: Colors.black,
-                    ),
+            Padding(
+           padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+            
+              child: Text(
+                "Hi, I'm Michael a student of Computer Science at the University of Ibadan. "
+                "I love building mobile softwares & services and also love learning. "
+                "My current interests lie in Mobile Development, Deep Learning and Algorithms and Data Structures",
+                style: GoogleFonts.nunitoSans(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 17,
+                    color: Colors.black,
                   ),
-                  textAlign: TextAlign.start,
                 ),
+                textAlign: TextAlign.start,
               ),
             ),
 
-            const Divider(),
-
-            // //my_connect
-            // const Flexible(
-            //   child: ContactPage(),
-            // ),
+            Padding(
+             padding: const EdgeInsets.only(left: 16.0, right: 16.0, top:8.0),
+            
+              child: Text(
+                "\n\nI always want to use my knowledge to the best I can to solve "
+                "problems that can better people lives. "
+                "In my free time, I prefer hanging out with close friends or watch some football. "
+                "I love travelling too",
+                style: GoogleFonts.nunitoSans(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 17,
+                    color: Colors.black,
+                  ),
+                ),
+                textAlign: TextAlign.start,
+              ),
+            ),
 
             const ContactPage()
           ],
