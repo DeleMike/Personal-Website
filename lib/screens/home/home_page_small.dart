@@ -46,7 +46,7 @@ class SmallHomePage extends StatelessWidget {
               margin: const EdgeInsets.only(left: 16.0, right: 16.0),
               padding: const EdgeInsets.only(left: 16.0, right: 16.0),
               child: Text(
-                'Software Developer. Flutter. Deep Learning. Football. Music.',
+                'Software Developer. Student. Flutter. Deep Learning. Football. Music.',
                 style: GoogleFonts.nunito(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w300,
