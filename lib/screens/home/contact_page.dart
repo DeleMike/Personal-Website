@@ -14,46 +14,48 @@ class ContactPage extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
       padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        children: const [
-          _ConnectButton(
-            url: Constants.profileGithub,
-            name: 'DeleMike',
-            assetUrl: 'images/github.png',
-            textDesc: 'Connect to Github',
-          ),
-          _ConnectButton(
-            url: Constants.profileLinkedIn,
-            name: 'Akindele Michael',
-            assetUrl: 'images/linkedin.png',
-            textDesc: 'Connect to LinkedIn',
-          ),
-          _ConnectButton(
-            url: Constants.profileTwitter,
-            name: 'Delé',
-            assetUrl: 'images/twitter.png',
-            textDesc: 'Connect to Twitter',
-          ),
-          _ConnectButton(
-            url: Constants.profileMedium,
-            name: 'Akindele Michael',
-            assetUrl: 'images/medium_light.png',
-            textDesc: 'Connect to Medium',
-          ),
-          _ConnectButton(
-            url: Constants.profileInstagram,
-            name: 'Akindele Michael',
-            assetUrl: 'images/instagram.png',
-            textDesc: 'Connect to Instagram',
-          ),
-          _ConnectButton(
-            url: Constants.gmail,
-            name: 'My Mail',
-            assetUrl: 'images/gmail.png',
-            textDesc: 'Connect to Mail',
-          ),
-        ],
+      child: Center(
+        child: Wrap(
+          //alignment: WrapAlignment.center,
+          children: const [
+            _ConnectButton(
+              url: Constants.profileGithub,
+              name: 'DeleMike',
+              assetUrl: 'images/github.png',
+              textDesc: 'Connect to Github',
+            ),
+            _ConnectButton(
+              url: Constants.profileLinkedIn,
+              name: 'Akindele Michael',
+              assetUrl: 'images/linkedin.png',
+              textDesc: 'Connect to LinkedIn',
+            ),
+            _ConnectButton(
+              url: Constants.profileTwitter,
+              name: 'Delé',
+              assetUrl: 'images/twitter.png',
+              textDesc: 'Connect to Twitter',
+            ),
+            _ConnectButton(
+              url: Constants.profileMedium,
+              name: 'Akindele Michael',
+              assetUrl: 'images/medium_light.png',
+              textDesc: 'Connect to Medium',
+            ),
+            _ConnectButton(
+              url: Constants.profileInstagram,
+              name: 'Akindele Michael',
+              assetUrl: 'images/instagram.png',
+              textDesc: 'Connect to Instagram',
+            ),
+            _ConnectButton(
+              url: Constants.gmail,
+              name: 'My Mail',
+              assetUrl: 'images/gmail.png',
+              textDesc: 'Connect to Mail',
+            ),
+          ],
+        ),
       ),
     );
   }
