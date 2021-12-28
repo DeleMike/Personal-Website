@@ -4,7 +4,6 @@ import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 /// This displays a single project card
 class ProjectCard extends StatelessWidget {
   /// Project ID
@@ -91,13 +90,13 @@ class ProjectCard extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         projectName,
                         style: GoogleFonts.nunito(
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 22,
                             color: Colors.black,
                           ),
                         ),
@@ -106,7 +105,7 @@ class ProjectCard extends StatelessWidget {
                   ),
                   Flexible(
                     child: Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: OutlinedButton.icon(
                         onPressed: () =>
                             html.window.open(projectGtLink, 'DeleMike'),
@@ -115,13 +114,16 @@ class ProjectCard extends StatelessWidget {
                           width: 20,
                           child: Icon(Icons.open_in_browser),
                         ),
-                        label: Text(
-                          'Check it out on Github',
-                          style: GoogleFonts.nunitoSans(
-                            textStyle: const TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 14,
-                              color: Colors.black,
+                        label: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Check it out on Github',
+                            style: GoogleFonts.nunitoSans(
+                              textStyle: const TextStyle(
+                                fontWeight: FontWeight.normal,
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ),
