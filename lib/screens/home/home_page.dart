@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     return SingleChildScrollView(
       child: LayoutBuilder(
         builder: (ctx, constraints) {
-          if (constraints.maxWidth < 600) {
+          if (constraints.maxWidth < 1100) {
             return const SmallHomePage();
           } else {
             return const BigHomePage();

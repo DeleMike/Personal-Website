@@ -15,6 +15,7 @@ class ContactPage extends StatelessWidget {
       margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
       padding: const EdgeInsets.only(left: 16.0, right: 16.0),
       child: Wrap(
+        alignment: WrapAlignment.center,
         children: const [
           _ConnectButton(
             url: Constants.profileGithub,

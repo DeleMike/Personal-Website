@@ -8,11 +8,12 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
+    final _dSize = MediaQuery.of(context).size;
+    return SizedBox(
+      width: _dSize.width * 0.5,
+      height: _dSize.height,
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //Dark theme controller
             // Switch.adaptive(
@@ -24,12 +25,13 @@ class AboutPage extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.all(16.0),
                 padding: const EdgeInsets.all(16.0),
+                constraints: const BoxConstraints.expand(),
                 child: Text(
                   'Akindele Michael',
                   style: GoogleFonts.nunito(
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 55,
+                      fontSize: 40,
                       color: Colors.black,
                     ),
                   ),
@@ -61,10 +63,10 @@ class AboutPage extends StatelessWidget {
 
             //Note about myself
             Flexible(
-              flex: 2,
               child: Container(
                 // margin: const EdgeInsets.all(16.0),
                 padding: const EdgeInsets.all(16.0),
+
                 child: Text(
                   "Hi, I'm Michael a student of Computer Science at the University of Ibadan. "
                   "I love building mobile softwares & services and also love learning. "
@@ -86,10 +88,12 @@ class AboutPage extends StatelessWidget {
 
             const Divider(),
 
-            //my_connect
-            const Flexible(
-              child: ContactPage(),
-            ),
+            // //my_connect
+            // const Flexible(
+            //   child: ContactPage(),
+            // ),
+
+            const ContactPage()
           ],
         ),
       ),

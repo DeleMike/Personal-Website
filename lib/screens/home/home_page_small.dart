@@ -8,7 +8,6 @@ class SmallHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _dSize = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(top: 16.0),
       padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
@@ -81,7 +80,7 @@ class SmallHomePage extends StatelessWidget {
               ),
             ),
             const Divider(),
-            ContactPage(),
+            const ContactPage(),
           ],
         ),
       ),
