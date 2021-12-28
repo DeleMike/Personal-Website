@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'about_page.dart';
+import '../home/home_page_big.dart';
+import '../home/home_page_small.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/home';
@@ -8,37 +9,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _dSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: Container(
-        color: Colors.white,
-        child: Row(
-          children: [
-            Flexible(
-              child: Container(
-                width: _dSize.width * 0.5,
-                height: _dSize.height,
-                decoration: const BoxDecoration(
-                  color: Colors.transparent,
-                ),
-                child: FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Image.asset(
-                    'images/pf_pic.png',
-                    fit: BoxFit.fitHeight,
-                  ),
-                ),
-              ),
-            ),
-            Flexible(
-              child: SizedBox(
-                width: _dSize.width * 0.5,
-                height: _dSize.height,
-                child: const AboutPage()
-              ),
-            ),
-          ],
-        ),
+      child: LayoutBuilder(
+        builder: (ctx, constraints) {
+          if (constraints.maxWidth < 600) {
+            return const SmallHomePage();
+          } else {
+            return const BigHomePage();
+          }
+        },
       ),
     );
   }
