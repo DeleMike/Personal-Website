@@ -21,10 +21,12 @@ class SmallHomePage extends StatelessWidget {
               child: FittedBox(
                 fit: BoxFit.cover,
                 child: CircleAvatar(
-                    backgroundImage: AssetImage('images/pf_pic.png')
-                    // Image.asset('images/projects/chat.jpg'),
-                    // fit: BoxFit.fill,
-                    ),
+                  backgroundImage: NetworkImage(
+                    'https://delemike.github.io/MK-iNVENTS/pf_pic.png',
+                  ),
+                  // Image.asset('images/projects/chat.jpg'),
+                  // fit: BoxFit.fill,
+                ),
               ),
             ),
             Container(
@@ -79,7 +81,6 @@ class SmallHomePage extends StatelessWidget {
                 textAlign: TextAlign.start,
               ),
             ),
-            
             Container(
               color: Colors.transparent,
               child: const ContactPage(),
