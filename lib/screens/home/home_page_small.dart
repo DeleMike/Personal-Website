@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'contact_page.dart';
 
+/// Home page for small screen devices
 class SmallHomePage extends StatelessWidget {
   const SmallHomePage({Key? key}) : super(key: key);
 

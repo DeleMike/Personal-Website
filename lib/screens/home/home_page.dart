@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../home/home_page_big.dart';
 import '../home/home_page_small.dart';
 
+/// Shows Profile Picture and the about page
 class HomePage extends StatelessWidget {
   static const routeName = '/home';
   const HomePage({Key? key}) : super(key: key);

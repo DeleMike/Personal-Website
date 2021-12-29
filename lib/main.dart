@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
+
       create: (ctx) => ProjectProvider(),
       child: MaterialApp(
         title: 'Akindele Michael',
         theme: ThemeData(
           primarySwatch: Colors.indigo,
         ),
-      
         home: const IndexPage(), 
         routes: {
           HomePage.routeName: (ctx) => const HomePage(),

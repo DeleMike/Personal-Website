@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home/home_page.dart';
 import 'projects/projects_page.dart';
 
+/// Root Page of the web application
 class IndexPage extends StatefulWidget {
   static const routeName = '/';
   const IndexPage({Key? key}) : super(key: key);

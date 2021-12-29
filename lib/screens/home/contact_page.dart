@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/constants.dart';
 
+/// Displays button to connect to personal social media accounts
 class ContactPage extends StatelessWidget {
   const ContactPage({Key? key}) : super(key: key);
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'about_page.dart';
 
+/// Home page for big sized screen
 class BigHomePage extends StatelessWidget {
   const BigHomePage({Key? key}) : super(key: key);
 

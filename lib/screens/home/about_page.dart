@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'contact_page.dart';
 
+/// Displays 'The About' 
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
 
@@ -62,8 +63,7 @@ class AboutPage extends StatelessWidget {
 
             //Note about myself
             Padding(
-           padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-            
+              padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
               child: Text(
                 "Hi, I'm Michael a student of Computer Science at the University of Ibadan. "
                 "I love building mobile softwares & services and also love learning. "
@@ -80,8 +80,7 @@ class AboutPage extends StatelessWidget {
             ),
 
             Padding(
-             padding: const EdgeInsets.only(left: 16.0, right: 16.0, top:8.0),
-            
+              padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
               child: Text(
                 "\n\nI always want to use my knowledge to the best I can to solve "
                 "problems that can better people lives. "
