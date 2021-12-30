@@ -1,3 +1,4 @@
+import 'dart:developer' as developer;
 import 'package:flutter/foundation.dart';
 
 import '../utils/theme_pref.dart';
@@ -14,7 +15,7 @@ class DarkThemeProvider with ChangeNotifier {
   ///set the desired theme type by returning
   ///```true``` for dark theme or ```false``` for light theme
   set darkTheme(bool value) {
-    print('Set Dark Mode On:  $value');
+    developer.log('Set Dark Mode On:  $value');
     _darkTheme = value;
     themePreference.setDarkTheme(value);
     notifyListeners();

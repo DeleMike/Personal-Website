@@ -13,7 +13,7 @@ class SmallHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<DarkThemeProvider>(
       builder: (_, themeProvider, __) => Container(
-        margin: const EdgeInsets.only(top: 16.0),
+        padding: const EdgeInsets.only(top: 16.0),
         color: themeProvider.darkTheme ? Colors.black : Colors.white,
         child: Center(
           child: Column(

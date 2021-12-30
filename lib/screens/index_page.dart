@@ -32,7 +32,6 @@ class _IndexPageState extends State<IndexPage> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Consumer<DarkThemeProvider>(
       builder: (_, themeProvider, __) => Scaffold(
         body: _tabs.elementAt(_selectedTabIndex),
@@ -48,6 +47,9 @@ class _IndexPageState extends State<IndexPage> {
               label: 'Projects',
             ),
           ],
+          backgroundColor:
+              themeProvider.darkTheme ? Colors.black : Colors.white,
+          unselectedItemColor: themeProvider.darkTheme ? Colors.indigo : null,
           elevation: 14.0,
           currentIndex: _selectedTabIndex,
           onTap: _onTabSelected,
