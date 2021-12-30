@@ -3,6 +3,9 @@ import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/dark_theme_provider.dart';
 
 /// This displays a single project card
 class ProjectCard extends StatelessWidget {
@@ -35,104 +38,117 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _dSize = MediaQuery.of(context).size;
-    return InkWell(
-      child: Container(
-        margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
-        padding: const EdgeInsets.all(16.0),
-        child: Card(
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(12.0),
-            ),
+    return Consumer<DarkThemeProvider>(
+      builder: (_, themeProvider, __) => InkWell(
+        child: Container(
+          margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+          padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: themeProvider.darkTheme ? Colors.black : Colors.white,
           ),
-          elevation: 7.0,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Flexible(
-                flex: 2,
-                child: Container(
-                  width: _dSize.width,
-                  height: (_dSize.height * 0.33),
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(12.0),
-                      topRight: Radius.circular(12.0),
-                    ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage('$projectImgCover'),
-                    ),
-                  ),
-                ),
+          child: Card(
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(12.0),
               ),
-              Flexible(
-                flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    projectDesc,
-                    style: GoogleFonts.nunito(
-                      textStyle: const TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 20,
-                        color: Colors.black,
+            ),
+            color: themeProvider.darkTheme ? Colors.black : Colors.white,
+            elevation: themeProvider.darkTheme ? 20.0 : 7.0,
+            shadowColor: themeProvider.darkTheme ? Colors.indigo : Colors.grey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  flex: 2,
+                  child: Container(
+                    width: _dSize.width,
+                    height: (_dSize.height * 0.33),
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(12.0),
+                        topRight: Radius.circular(12.0),
+                      ),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage('$projectImgCover'),
                       ),
                     ),
-                    textAlign: TextAlign.start,
                   ),
                 ),
-              ),
-              const Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        projectName,
-                        style: GoogleFonts.nunito(
-                          textStyle: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                            color: Colors.black,
+                Flexible(
+                  flex: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      projectDesc,
+                      style: GoogleFonts.nunito(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 20,
+                          color: themeProvider.darkTheme
+                              ? Colors.white
+                              : Colors.black,
+                        ),
+                      ),
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                ),
+                const Divider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          projectName,
+                          style: GoogleFonts.nunito(
+                            textStyle: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                              color: themeProvider.darkTheme
+                                  ? Colors.white
+                                  : Colors.black,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: OutlinedButton.icon(
-                        onPressed: () =>
-                            html.window.open(projectGtLink, 'DeleMike'),
-                        icon: const SizedBox(
-                          height: 20,
-                          width: 20,
-                          child: Icon(Icons.open_in_browser),
-                        ),
-                        label: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Check it out on Github',
-                            style: GoogleFonts.nunitoSans(
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14,
-                                color: Colors.black,
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: OutlinedButton.icon(
+                          onPressed: () =>
+                              html.window.open(projectGtLink, 'DeleMike'),
+                          icon: const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Icon(Icons.open_in_browser),
+                          ),
+                          label: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Check it out on Github',
+                              style: GoogleFonts.nunitoSans(
+                                textStyle: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 14,
+                                  color: themeProvider.darkTheme
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

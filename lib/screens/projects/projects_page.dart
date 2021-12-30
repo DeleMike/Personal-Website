@@ -20,26 +20,35 @@ class _ProjectsPageState extends State<ProjectsPage> {
   @override
   void initState() {
     super.initState();
-      //fetch all projects data
+    _fetchData();
+  }
+
+  //fetch all projects data
+  Future<void> _fetchData() async {
     final _projectProvider =
         Provider.of<ProjectProvider>(context, listen: false);
     _projectProvider.fetchAndSetProjects();
     _projectList = _projectProvider.projects;
-      
+  }
+
+  Future<void> _onRefresh() {
+    return _fetchData();
   }
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      //itemBuilder: (ctx, index) => const FlutterLogo(size: 100,),
-      itemBuilder: (ctx, index) => ProjectCard(
-        projectId: _projectList[index].projectID,
-        projectName: _projectList[index].projectName,
-        projectDesc: _projectList[index].projectDesc,
-        projectGtLink: _projectList[index].projectGtLink,
-        projectImgCover: _projectList[index].projectImgCover,
+    return RefreshIndicator(
+      onRefresh: _onRefresh,
+      child: ListView.builder(
+        itemBuilder: (ctx, index) => ProjectCard(
+          projectId: _projectList[index].projectID,
+          projectName: _projectList[index].projectName,
+          projectDesc: _projectList[index].projectDesc,
+          projectGtLink: _projectList[index].projectGtLink,
+          projectImgCover: _projectList[index].projectImgCover,
+        ),
+        itemCount: _projectList.length,
       ),
-      itemCount: _projectList.length,
     );
   }
 }

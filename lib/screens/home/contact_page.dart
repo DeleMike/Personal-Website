@@ -3,8 +3,10 @@ import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import '../../utils/constants.dart';
+import '../../providers/dark_theme_provider.dart';
 
 /// Displays button to connect to personal social media accounts
 class ContactPage extends StatelessWidget {
@@ -12,26 +14,28 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _brightness = MediaQuery.of(context).platformBrightness;
+    bool _isDarkMode = _brightness == Brightness.dark;
     return Container(
       margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
       padding: const EdgeInsets.only(left: 16.0, right: 16.0),
       child: Center(
         child: Wrap(
           //alignment: WrapAlignment.center,
-          children: const [
-            _ConnectButton(
+          children: [
+            const _ConnectButton(
               url: Constants.profileGithub,
               name: 'DeleMike',
               assetUrl: 'https://delemike.github.io/MK-iNVENTS/github.png',
               textDesc: 'Connect to Github',
             ),
-            _ConnectButton(
+            const _ConnectButton(
               url: Constants.profileLinkedIn,
               name: 'Akindele Michael',
               assetUrl: 'https://delemike.github.io/MK-iNVENTS/linkedin.png',
               textDesc: 'Connect to LinkedIn',
             ),
-            _ConnectButton(
+            const _ConnectButton(
               url: Constants.profileTwitter,
               name: 'Delé',
               assetUrl: 'https://delemike.github.io/MK-iNVENTS/twitter.png',
@@ -40,16 +44,18 @@ class ContactPage extends StatelessWidget {
             _ConnectButton(
               url: Constants.profileMedium,
               name: 'Akindele Michael',
-              assetUrl: 'https://delemike.github.io/MK-iNVENTS/medium_light.png',
+              assetUrl: _isDarkMode
+                  ? 'https://delemike.github.io/MK-iNVENTS/medium.png'
+                  : 'https://delemike.github.io/MK-iNVENTS/medium_light.png',
               textDesc: 'Connect to Medium',
             ),
-            _ConnectButton(
+            const _ConnectButton(
               url: Constants.profileInstagram,
               name: 'Akindele Michael',
               assetUrl: 'https://delemike.github.io/MK-iNVENTS/instagram.png',
               textDesc: 'Connect to Instagram',
             ),
-            _ConnectButton(
+            const _ConnectButton(
               url: Constants.gmail,
               name: 'My Mail',
               assetUrl: 'https://delemike.github.io/MK-iNVENTS/gmail.png',
@@ -74,24 +80,26 @@ class _ConnectButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: TextButton.icon(
-        onPressed: () => html.window.open(url!, name!),
-        icon: SizedBox(
-          height: 20,
-          width: 20,
-          child: Image.network(assetUrl!),
-        ),
-        label: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            textDesc!,
-            style: GoogleFonts.nunitoSans(
-              textStyle: const TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 14,
-                color: Colors.black,
+    return Consumer<DarkThemeProvider>(
+      builder: (_, themeProvider, __) => Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: TextButton.icon(
+          onPressed: () => html.window.open(url!, name!),
+          icon: SizedBox(
+            height: 20,
+            width: 20,
+            child: Image.network(assetUrl!),
+          ),
+          label: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              textDesc!,
+              style: GoogleFonts.nunitoSans(
+                textStyle: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 14,
+                  color: themeProvider.darkTheme ? Colors.white : Colors.black,
+                ),
               ),
             ),
           ),
